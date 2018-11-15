@@ -1,25 +1,39 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Display from './components/Display/Display'
+import Rows from './components/Rows/Rows';
 
 export default class App extends React.Component {
   constructor( props ) {
     super( props );
     this.state = {
-      saludo: 'Hola man!',
+      operation: ''
     }
   }
 
-  cambiarSaludo = ( sld ) => {
-    this.setState({saludo: sld});
+  operationHandler = ( caracter ) => {
+    if ( caracter !== '=' && caracter !== 'Del' ){
+      const oldOperation = this.state.operation;
+      const newOperation = oldOperation + caracter;
+      this.setState({operation: newOperation});
+    }
+
+    if (caracter === 'Del'){
+      const oldOperation = this.state.operation;
+      const newOperation = oldOperation.slice(0, -1);
+      this.setState({operation: newOperation});
+    }
   }
 
   render() {
     return (
       <View style={styles.container}>
         <Display
-        hi={this.state.saludo}
-        method={this.cambiarSaludo} />
+          send={this.state.operation} />
+
+        <Rows 
+          style={styles.rows}
+          method={this.operationHandler} />
       </View>
     );
   }
@@ -33,12 +47,8 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     marginRight: 10,
     marginBottom: 20,
+    flexWrap: 'wrap',
   },
-  row: {
-    width: 50, 
-    height: 50, 
-    backgroundColor: 'powderblue',
-  }
 
 });
 

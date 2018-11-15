@@ -14,9 +14,8 @@ export default class Display extends React.Component {
     return (
       <View>
         <TouchableHighlight
-          style={styles.display}
-          onPress={() => this.props.method(this.state.otroSaludo)} >
-            <Text style={styles.text}>{this.props.hi}</Text>
+          style={styles.display} >
+            <Text style={styles.text}>{this.props.send}</Text>
         </TouchableHighlight>
       </View>
     );
@@ -28,14 +27,14 @@ const styles = StyleSheet.create({
       flex: 1,
       flexDirection: 'column',
       justifyContent: 'center',
-      alignItems: 'stretch',
     },
     display: {
       height: 150, 
       backgroundColor: 'steelblue',
-      alignItems: 'center',
+      alignItems: 'flex-end',
       justifyContent: 'center',
       borderRadius: 5,
+      padding: 10
     },
     text: {
       fontSize: 40
