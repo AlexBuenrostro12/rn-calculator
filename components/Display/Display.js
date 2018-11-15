@@ -4,10 +4,6 @@ import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
 export default class Display extends React.Component {
   constructor( props ){
     super(props);
-
-    this.state = {
-      otroSaludo: 'Hi woman!'
-    }
   }
 
   render() {

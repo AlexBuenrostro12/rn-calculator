@@ -6,7 +6,7 @@ export default class Rows extends React.Component {
     constructor( props ) {
     super( props );
     this.state = {
-      row: [
+      rows: [
         { label: '7', operator: 7 },
         { label: '8', operator: 8 },
         { label: '9', operator: 9 },
@@ -28,15 +28,10 @@ export default class Rows extends React.Component {
     }
   }
 
-
-  cambiarSaludo = ( sld ) => {
-    this.setState({saludo: sld});
-  }
-
   render() {
     return (
       <View style={styles.container}>
-        {this.state.row.map(opr => (
+        {this.state.rows.map(opr => (
             <Row
                 key={opr.label}
                 operator={opr.operator}
