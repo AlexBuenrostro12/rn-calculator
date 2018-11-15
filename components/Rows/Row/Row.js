@@ -11,7 +11,8 @@ export default class Row extends React.Component {
         
         <TouchableHighlight 
             style={styles.row}
-            onPress={() => this.props.method(this.props.operator)} >
+            onPress={() => this.props.method(this.props.operator)}
+            onLongPress={() => this.props.method('True')} >
                 <Text style={styles.text}>{this.props.operator}</Text>
         </TouchableHighlight>
 
