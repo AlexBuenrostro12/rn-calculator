@@ -7,23 +7,23 @@ export default class Rows extends React.Component {
     super( props );
     this.state = {
       rows: [
-        { label: '7', operator: 7 },
-        { label: '8', operator: 8 },
-        { label: '9', operator: 9 },
-        { label: 'Del', operator: 'Del' },
-        { label: '4', operator: 4 },
-        { label: '5', operator: 5 },
-        { label: '6', operator: 6 },
-        { label: '/', operator: '/' },
-        { label: '1', operator: 1 },
-        { label: '2', operator: 2 },
-        { label: '3', operator: 3 },
-        { label: '*', operator: '*' },
-        { label: '0', operator: 0 },
-        { label: '.', operator: '.' },
-        { label: '-', operator: '-' },
-        { label: '+', operator: '+' },
-        { label: '=', operator: '=' },
+        { label: '7' },
+        { label: '8' },
+        { label: '9' },
+        { label: 'Del' },
+        { label: '4' },
+        { label: '5' },
+        { label: '6' },
+        { label: '/' },
+        { label: '1' },
+        { label: '2' },
+        { label: '3' },
+        { label: '*' },
+        { label: '0' },
+        { label: '.' },
+        { label: '-' },
+        { label: '+' },
+        { label: '=' },
       ],
     }
   }
@@ -34,7 +34,7 @@ export default class Rows extends React.Component {
         {this.state.rows.map(opr => (
             <Row
                 key={opr.label}
-                operator={opr.operator}
+                operator={opr.label}
                 method={this.props.method} />
         ))}
       </View>

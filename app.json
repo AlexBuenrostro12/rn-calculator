@@ -22,6 +22,12 @@
     ],
     "ios": {
       "supportsTablet": true
+    },
+    "android": {
+      "package": "com.br.rncalculator",
+      "versionCode": 1,
+      "permissions": [],
+      "icon": "./assets/icon.png"
     }
   }
 }
